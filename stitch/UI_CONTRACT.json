@@ -1,0 +1,277 @@
+[
+  {
+    "screenId": "6be8f599ceee4333acda4babf8e47395",
+    "screenTitle": "Gameplay - PulseGate Lite",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "START",
+        "href": "#",
+        "line": 244
+      },
+      {
+        "type": "link",
+        "label": "RESTART",
+        "href": "#",
+        "line": 248
+      },
+      {
+        "type": "link",
+        "label": "leaderboard",
+        "href": "#",
+        "line": 252
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 256
+      },
+      {
+        "type": "link",
+        "label": "PRIVACY_PROT",
+        "href": "#",
+        "line": 320
+      },
+      {
+        "type": "link",
+        "label": "DATA_ENCRYPT",
+        "href": "#",
+        "line": 321
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 229
+      },
+      {
+        "type": "button",
+        "label": "pause",
+        "line": 232
+      },
+      {
+        "type": "button",
+        "label": "UPGRADE_CORE",
+        "line": 262
+      },
+      {
+        "type": "button",
+        "label": "START GAME",
+        "line": 300
+      },
+      {
+        "type": "button",
+        "label": "RESUME",
+        "line": 310
+      },
+      {
+        "type": "button",
+        "label": "ABORT",
+        "line": 311
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "START",
+        "href": "#",
+        "line": 244
+      },
+      {
+        "type": "link",
+        "label": "RESTART",
+        "href": "#",
+        "line": 248
+      },
+      {
+        "type": "link",
+        "label": "leaderboard",
+        "href": "#",
+        "line": 252
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 256
+      },
+      {
+        "type": "link",
+        "label": "PRIVACY_PROT",
+        "href": "#",
+        "line": 320
+      },
+      {
+        "type": "link",
+        "label": "DATA_ENCRYPT",
+        "href": "#",
+        "line": 321
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 229
+      },
+      {
+        "type": "button",
+        "label": "pause",
+        "line": 232
+      },
+      {
+        "type": "button",
+        "label": "UPGRADE_CORE",
+        "line": 262
+      },
+      {
+        "type": "button",
+        "label": "START GAME",
+        "line": 300
+      },
+      {
+        "type": "button",
+        "label": "RESUME",
+        "line": 310
+      },
+      {
+        "type": "button",
+        "label": "ABORT",
+        "line": 311
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 12,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "fb2b9f4d058d421ea4a3140c44a126d3",
+    "screenTitle": "Game Settings - PulseGate Lite",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "PRIVACY_PROT",
+        "href": "#",
+        "line": 298
+      },
+      {
+        "type": "link",
+        "label": "DATA_ENCRYPT",
+        "href": "#",
+        "line": 299
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 186
+      },
+      {
+        "type": "button",
+        "label": "pause",
+        "line": 190
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 202
+      },
+      {
+        "type": "button",
+        "label": "ACT_SAVE_PREFERENCES",
+        "line": 284
+      },
+      {
+        "type": "button",
+        "label": "ACT_RETURN_TO_GAMEPLAY",
+        "line": 287
+      },
+      {
+        "type": "input",
+        "label": "range",
+        "inputType": "range",
+        "line": 229
+      },
+      {
+        "type": "input",
+        "label": "range",
+        "inputType": "range",
+        "line": 244
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 261
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "PRIVACY_PROT",
+        "href": "#",
+        "line": 298
+      },
+      {
+        "type": "link",
+        "label": "DATA_ENCRYPT",
+        "href": "#",
+        "line": 299
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 186
+      },
+      {
+        "type": "button",
+        "label": "pause",
+        "line": 190
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 202
+      },
+      {
+        "type": "button",
+        "label": "ACT_SAVE_PREFERENCES",
+        "line": 284
+      },
+      {
+        "type": "button",
+        "label": "ACT_RETURN_TO_GAMEPLAY",
+        "line": 287
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "range",
+        "inputType": "range",
+        "line": 229
+      },
+      {
+        "type": "input",
+        "label": "range",
+        "inputType": "range",
+        "line": 244
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 261
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 10,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  }
+]
