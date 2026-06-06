@@ -1,0 +1,146 @@
+[
+  {
+    "screenId": "6be8f599ceee4333acda4babf8e47395",
+    "title": "Gameplay - PulseGate Lite",
+    "componentName": "GameplayPulsegateLite",
+    "file": "src/screens/GameplayPulsegateLite.tsx",
+    "buttons": 6,
+    "inputs": 0,
+    "links": 6,
+    "actions": [
+      {
+        "id": "settings-1",
+        "kind": "button",
+        "label": "settings",
+        "index": 0
+      },
+      {
+        "id": "pause-2",
+        "kind": "button",
+        "label": "pause",
+        "index": 1
+      },
+      {
+        "id": "upgrade-core-3",
+        "kind": "button",
+        "label": "UPGRADE_CORE",
+        "index": 2
+      },
+      {
+        "id": "start-game-4",
+        "kind": "button",
+        "label": "START GAME",
+        "index": 3
+      },
+      {
+        "id": "resume-5",
+        "kind": "button",
+        "label": "RESUME",
+        "index": 4
+      },
+      {
+        "id": "abort-6",
+        "kind": "button",
+        "label": "ABORT",
+        "index": 5
+      },
+      {
+        "id": "start-1",
+        "kind": "link",
+        "label": "START",
+        "href": "#",
+        "index": 0
+      },
+      {
+        "id": "restart-2",
+        "kind": "link",
+        "label": "RESTART",
+        "href": "#",
+        "index": 1
+      },
+      {
+        "id": "leaderboard-3",
+        "kind": "link",
+        "label": "LEADERBOARD",
+        "href": "#",
+        "index": 2
+      },
+      {
+        "id": "settings-4",
+        "kind": "link",
+        "label": "SETTINGS",
+        "href": "#",
+        "index": 3
+      },
+      {
+        "id": "privacy-prot-5",
+        "kind": "link",
+        "label": "PRIVACY_PROT",
+        "href": "#",
+        "index": 4
+      },
+      {
+        "id": "data-encrypt-6",
+        "kind": "link",
+        "label": "DATA_ENCRYPT",
+        "href": "#",
+        "index": 5
+      }
+    ]
+  },
+  {
+    "screenId": "fb2b9f4d058d421ea4a3140c44a126d3",
+    "title": "Game Settings - PulseGate Lite",
+    "componentName": "GameSettingsPulsegateLite",
+    "file": "src/screens/GameSettingsPulsegateLite.tsx",
+    "buttons": 5,
+    "inputs": 3,
+    "links": 2,
+    "actions": [
+      {
+        "id": "settings-1",
+        "kind": "button",
+        "label": "SETTINGS",
+        "index": 0
+      },
+      {
+        "id": "pause-2",
+        "kind": "button",
+        "label": "PAUSE",
+        "index": 1
+      },
+      {
+        "id": "settings-3",
+        "kind": "button",
+        "label": "Settings",
+        "index": 2
+      },
+      {
+        "id": "act-save-preferences-4",
+        "kind": "button",
+        "label": "ACT_SAVE_PREFERENCES",
+        "index": 3
+      },
+      {
+        "id": "act-return-to-gameplay-5",
+        "kind": "button",
+        "label": "ACT_RETURN_TO_GAMEPLAY",
+        "index": 4
+      },
+      {
+        "id": "privacy-prot-1",
+        "kind": "link",
+        "label": "PRIVACY_PROT",
+        "href": "#",
+        "index": 0
+      },
+      {
+        "id": "data-encrypt-2",
+        "kind": "link",
+        "label": "DATA_ENCRYPT",
+        "href": "#",
+        "index": 1
+      }
+    ]
+  }
+]
