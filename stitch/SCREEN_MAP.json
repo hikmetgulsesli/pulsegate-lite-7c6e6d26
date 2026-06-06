@@ -1,0 +1,20 @@
+[
+  {
+    "screenId": "6be8f599ceee4333acda4babf8e47395",
+    "name": "Gameplay - PulseGate Lite",
+    "type": "game",
+    "description": "Gameplay - PulseGate Lite screen",
+    "surfaceIds": [
+      "SURF_GAMEPLAY"
+    ]
+  },
+  {
+    "screenId": "fb2b9f4d058d421ea4a3140c44a126d3",
+    "name": "Game Settings - PulseGate Lite",
+    "type": "settings",
+    "description": "Game Settings - PulseGate Lite screen",
+    "surfaceIds": [
+      "SURF_GAME_SETTINGS"
+    ]
+  }
+]

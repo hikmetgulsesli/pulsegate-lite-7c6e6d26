@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Game Settings - PulseGate Lite</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;700;900&amp;family=Sora:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        /* Custom Neon Ranges */
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 16px;
+            width: 8px;
+            border-radius: 2px;
+            background: #00dbe7;
+            cursor: pointer;
+            box-shadow: 0 0 8px rgba(0,219,231,0.8);
+            margin-top: -6px;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: #3a494b;
+            border-radius: 2px;
+        }
+        input[type=range]:focus::-webkit-slider-thumb {
+            background: #b0ef00;
+            box-shadow: 0 0 12px rgba(176,239,0,0.9);
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#0e0e0e",
+                    "tertiary-fixed-dim": "#9fd800",
+                    "background": "#131313",
+                    "error-container": "#93000a",
+                    "surface-container-high": "#2a2a2a",
+                    "on-background": "#e5e2e1",
+                    "tertiary-container": "#b0ef00",
+                    "on-primary-fixed": "#002022",
+                    "surface-container-highest": "#353534",
+                    "surface-variant": "#353534",
+                    "tertiary": "#edffc5",
+                    "on-primary-fixed-variant": "#004f54",
+                    "on-surface": "#e5e2e1",
+                    "surface-container-low": "#1c1b1b",
+                    "primary": "#e1fdff",
+                    "outline-variant": "#3a494b",
+                    "on-secondary-container": "#520049",
+                    "on-primary": "#00363a",
+                    "on-secondary-fixed-variant": "#840076",
+                    "error": "#ffb4ab",
+                    "inverse-on-surface": "#313030",
+                    "surface-bright": "#3a3939",
+                    "primary-fixed-dim": "#00dbe7",
+                    "primary-fixed": "#74f5ff",
+                    "surface-dim": "#131313",
+                    "surface-tint": "#00dbe7",
+                    "secondary-container": "#ff24e4",
+                    "on-secondary": "#5e0053",
+                    "on-tertiary-fixed": "#141f00",
+                    "inverse-primary": "#00696f",
+                    "on-secondary-fixed": "#3a0033",
+                    "primary-container": "#00f2ff",
+                    "secondary-fixed-dim": "#fface8",
+                    "surface-container": "#201f1f",
+                    "on-tertiary-fixed-variant": "#374e00",
+                    "on-surface-variant": "#b9cacb",
+                    "secondary": "#fface8",
+                    "on-error-container": "#ffdad6",
+                    "on-primary-container": "#006a71",
+                    "on-error": "#690005",
+                    "surface": "#131313",
+                    "outline": "#849495",
+                    "secondary-fixed": "#ffd7f0",
+                    "inverse-surface": "#e5e2e1",
+                    "on-tertiary-container": "#4c6900",
+                    "tertiary-fixed": "#b6f700",
+                    "on-tertiary": "#253600"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "safe-area": "5vw",
+                    "unit": "4px",
+                    "gutter": "1rem",
+                    "panel-padding": "1.5rem",
+                    "hud-margin": "2rem"
+            },
+            "fontFamily": {
+                    "body-rtf": [
+                            "Geist"
+                    ],
+                    "label-caps": [
+                            "Geist"
+                    ],
+                    "display-lg-mobile": [
+                            "Sora"
+                    ],
+                    "display-lg": [
+                            "Sora"
+                    ],
+                    "headline-md": [
+                            "Sora"
+                    ],
+                    "hud-metric": [
+                            "Geist"
+                    ]
+            },
+            "fontSize": {
+                    "body-rtf": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "1",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "display-lg-mobile": [
+                            "36px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "display-lg": [
+                            "64px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "headline-md": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "hud-metric": [
+                            "24px",
+                            {
+                                    "lineHeight": "1",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "900"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+</head>
+<body class="bg-[#050505] text-on-background font-body-rtf text-body-rtf min-h-screen relative overflow-hidden flex items-center justify-center p-safe-area">
+<!-- Background Gameplay Image (Blurred) -->
+<div class="absolute inset-0 z-0 bg-cover bg-center filter blur-xl opacity-40" data-alt="A dynamic, high-speed neon cyberpunk cityscape viewed from the perspective of an advanced racing cockpit. The scene is bathed in intense cyan, magenta, and lime-green glowing lights against a deep black void background. The aesthetics reflect a digital, aggressive, high-energy arcade racing environment with light trails streaming past to indicate extreme velocity." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD7p4HAjYYYq4-_z0x8JFyBuNwpadTkCApkjsYXQZKGp_hQe4tvRfqV0FcSC5IjEly8t5LpkZEyZ2s_8nuFXXUf_k-wA9cnBz4zW6BRi2xln2WIlS0Jt7BX5c4h9_ACqy7fo3EP1uOmfkZW3msIj1aOjDF8Fhw0ZrqITznyK9jHu0Bqn9QXI0YKq8YWiFFeC0xB0KFpxBcg6d_PgXINcRh1H0icC13eHgBjOVPyOqGb05zOv_8e3SMJxU-NTCXSv5G9hxDYXcS0fyU');"></div>
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-hud-margin py-unit bg-transparent flat no shadows hidden md:flex">
+<div class="font-display-lg text-display-lg font-black text-primary drop-shadow-[0_0_10px_rgba(0,219,231,0.8)]">
+            PULSEGATE_LITE
+        </div>
+<div class="flex gap-gutter items-center font-label-caps text-label-caps">
+<!-- Settings is Active -->
+<button class="text-primary font-bold scale-95 transition-transform duration-150 flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="settings" data-weight="fill" style="font-variation-settings: 'FILL' 1;">settings</span>
+                SETTINGS
+            </button>
+<button class="text-on-surface-variant hover:text-primary hover:drop-shadow-[0_0_8px_rgba(0,219,231,0.6)] scale-95 transition-transform duration-150 flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="pause">pause</span>
+                PAUSE
+            </button>
+</div>
+</header>
+<!-- Mobile TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-hud-margin py-unit bg-transparent flat no shadows md:hidden">
+<div class="font-display-lg-mobile text-display-lg-mobile font-black text-primary drop-shadow-[0_0_10px_rgba(0,219,231,0.8)]">
+            PULSEGATE_LITE
+        </div>
+<div class="flex gap-gutter items-center font-label-caps text-label-caps">
+<button class="text-primary font-bold scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="settings" data-weight="fill" style="font-variation-settings: 'FILL' 1;">settings</span>
+</button>
+</div>
+</header>
+<!-- Settings Panel (Centered Glassmorphic Box) -->
+<main class="relative z-10 w-full max-w-2xl bg-surface-container-lowest/80 backdrop-blur-[12px] border border-primary/20 rounded-lg p-panel-padding shadow-[0_0_40px_rgba(0,219,231,0.1)] flex flex-col gap-6">
+<!-- Header -->
+<div class="flex justify-between items-start border-b border-outline-variant/50 pb-4">
+<div>
+<h1 class="font-headline-md text-headline-md text-primary tracking-wider uppercase drop-shadow-[0_0_8px_rgba(0,219,231,0.5)]">System Override</h1>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-2">CONFIGURE GAMEPLAY PARAMETERS</p>
+</div>
+<div class="font-hud-metric text-hud-metric text-tertiary-fixed-dim bg-tertiary-fixed-dim/10 px-3 py-1 rounded border border-tertiary-fixed-dim/30">
+                SYS_VER 1.0.2
+            </div>
+</div>
+<!-- Controls Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Left Column: Sliders -->
+<div class="flex flex-col gap-6">
+<!-- Difficulty Slider -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between font-label-caps text-label-caps">
+<label class="text-on-surface uppercase">DIFFICULTY</label>
+<span class="text-primary-fixed-dim" id="diff-val">STANDARD</span>
+</div>
+<input class="w-full appearance-none bg-transparent" id="difficulty-slider" max="3" min="1" type="range" value="2"/>
+<div class="flex justify-between font-label-caps text-label-caps text-on-surface-variant text-[10px]">
+<span>NOVICE</span>
+<span>OVERLOAD</span>
+</div>
+</div>
+<!-- Sound Volume -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between font-label-caps text-label-caps">
+<label class="text-on-surface uppercase flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]" data-icon="volume_up">volume_up</span>
+                            MASTER VOLUME
+                        </label>
+<span class="text-primary-fixed-dim" id="vol-val">80%</span>
+</div>
+<input class="w-full appearance-none bg-transparent" id="volume-slider" max="100" min="0" type="range" value="80"/>
+<!-- Energy Bar Style visual representation -->
+<div class="h-1 bg-surface-container-high rounded-full overflow-hidden mt-1">
+<div class="h-full bg-primary-fixed-dim shadow-[0_0_8px_rgba(0,219,231,0.8)]" id="vol-bar" style="width: 80%;"></div>
+</div>
+</div>
+</div>
+<!-- Right Column: Toggles & Help -->
+<div class="flex flex-col gap-6 bg-surface-container-high/30 p-4 rounded border border-outline-variant/30">
+<!-- Speed Toggle -->
+<div class="flex justify-between items-center border-b border-outline-variant/30 pb-4">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface uppercase">HYPER-SPEED</span>
+<span class="text-xs text-on-surface-variant mt-1">ENABLE 2X VELOCITY MULTIPLIER</span>
+</div>
+<!-- Custom Neon Toggle -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-surface after:border-outline after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary-container shadow-[0_0_10px_rgba(255,36,228,0.5)]"></div>
+</label>
+</div>
+<!-- Input Help -->
+<div class="flex flex-col gap-3 pt-2">
+<h3 class="font-label-caps text-label-caps text-primary uppercase">INPUT SCHEMATICS</h3>
+<div class="flex justify-center gap-2 mt-2">
+<div class="flex flex-col items-center gap-1">
+<div class="w-10 h-10 border border-outline-variant rounded flex items-center justify-center font-hud-metric text-hud-metric text-on-surface bg-surface-container-highest/50 shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]">W</div>
+<div class="flex gap-1">
+<div class="w-10 h-10 border border-outline-variant rounded flex items-center justify-center font-hud-metric text-hud-metric text-on-surface bg-surface-container-highest/50 shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]">A</div>
+<div class="w-10 h-10 border border-outline-variant rounded flex items-center justify-center font-hud-metric text-hud-metric text-on-surface bg-surface-container-highest/50 shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]">S</div>
+<div class="w-10 h-10 border border-outline-variant rounded flex items-center justify-center font-hud-metric text-hud-metric text-on-surface bg-surface-container-highest/50 shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]">D</div>
+</div>
+</div>
+</div>
+<div class="text-center font-label-caps text-label-caps text-on-surface-variant mt-2">STEER / ACCELERATE</div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col sm:flex-row gap-4 mt-4 border-t border-outline-variant/50 pt-6">
+<button class="flex-1 bg-transparent border-2 border-primary text-primary font-label-caps text-label-caps px-6 py-4 uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-colors duration-200 shadow-[0_0_15px_rgba(0,219,231,0.3)] hover:shadow-[0_0_25px_rgba(0,219,231,0.8)] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface">
+                ACT_SAVE_PREFERENCES
+            </button>
+<button class="flex-1 bg-surface-container-highest/50 border border-outline-variant text-on-surface font-label-caps text-label-caps px-6 py-4 uppercase tracking-widest hover:bg-surface-container-high hover:border-on-surface transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-outline-variant focus:ring-offset-2 focus:ring-offset-surface">
+                ACT_RETURN_TO_GAMEPLAY
+            </button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="fixed bottom-0 w-full flex justify-between px-hud-margin py-unit opacity-50 hover:opacity-100 transition-opacity z-50 bg-transparent flat">
+<div class="text-on-surface-variant font-label-caps text-label-caps">
+            © 2024 NEON_ARCADE_SYSTEMS
+        </div>
+<div class="flex gap-gutter text-on-surface-variant font-label-caps text-label-caps">
+<a class="hover:text-primary transition-colors" href="#">PRIVACY_PROT</a>
+<a class="hover:text-primary transition-colors" href="#">DATA_ENCRYPT</a>
+</div>
+</footer>
+<script>
+        // Simple script to update range slider visuals
+        const diffSlider = document.getElementById('difficulty-slider');
+        const diffVal = document.getElementById('diff-val');
+        const diffLabels = ['NOVICE', 'STANDARD', 'OVERLOAD'];
+
+        diffSlider.addEventListener('input', (e) => {
+            diffVal.textContent = diffLabels[e.target.value - 1];
+        });
+
+        const volSlider = document.getElementById('volume-slider');
+        const volVal = document.getElementById('vol-val');
+        const volBar = document.getElementById('vol-bar');
+
+        volSlider.addEventListener('input', (e) => {
+            volVal.textContent = `${e.target.value}%`;
+            volBar.style.width = `${e.target.value}%`;
+        });
+    </script>
+</body></html>

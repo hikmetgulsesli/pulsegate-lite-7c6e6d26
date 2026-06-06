@@ -1,0 +1,24 @@
+[
+  {
+    "screenId": "6be8f599ceee4333acda4babf8e47395",
+    "title": "Gameplay - PulseGate Lite",
+    "htmlFile": "6be8f599ceee4333acda4babf8e47395.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzc5NGE1NmVmNmJlNzQ0ZDI5MmJmNjJkN2QyZDA1OGQ5EgsSBxCN19Wi9xcYAZIBIwoKcHJvamVjdF9pZBIVQhM2Mjc3ODEyNjI2NDYxNTczMjc3&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/pulsegate-lite-7c6e6d26/stitch/6be8f599ceee4333acda4babf8e47395.html",
+    "surfaceIds": [
+      "SURF_GAMEPLAY"
+    ]
+  },
+  {
+    "screenId": "fb2b9f4d058d421ea4a3140c44a126d3",
+    "title": "Game Settings - PulseGate Lite",
+    "htmlFile": "fb2b9f4d058d421ea4a3140c44a126d3.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzIxYmExYTg4MDU1ZDRmNDliMWQyY2NhZTY0Y2U5ODU5EgsSBxCN19Wi9xcYAZIBIwoKcHJvamVjdF9pZBIVQhM2Mjc3ODEyNjI2NDYxNTczMjc3&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/pulsegate-lite-7c6e6d26/stitch/fb2b9f4d058d421ea4a3140c44a126d3.html",
+    "surfaceIds": [
+      "SURF_GAME_SETTINGS"
+    ]
+  }
+]

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gameplay - PulseGate Lite</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;700;900&amp;family=Sora:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#0e0e0e",
+                    "tertiary-fixed-dim": "#9fd800",
+                    "background": "#131313",
+                    "error-container": "#93000a",
+                    "surface-container-high": "#2a2a2a",
+                    "on-background": "#e5e2e1",
+                    "tertiary-container": "#b0ef00",
+                    "on-primary-fixed": "#002022",
+                    "surface-container-highest": "#353534",
+                    "surface-variant": "#353534",
+                    "tertiary": "#edffc5",
+                    "on-primary-fixed-variant": "#004f54",
+                    "on-surface": "#e5e2e1",
+                    "surface-container-low": "#1c1b1b",
+                    "primary": "#e1fdff",
+                    "outline-variant": "#3a494b",
+                    "on-secondary-container": "#520049",
+                    "on-primary": "#00363a",
+                    "on-secondary-fixed-variant": "#840076",
+                    "error": "#ffb4ab",
+                    "inverse-on-surface": "#313030",
+                    "surface-bright": "#3a3939",
+                    "primary-fixed-dim": "#00dbe7",
+                    "primary-fixed": "#74f5ff",
+                    "surface-dim": "#131313",
+                    "surface-tint": "#00dbe7",
+                    "secondary-container": "#ff24e4",
+                    "on-secondary": "#5e0053",
+                    "on-tertiary-fixed": "#141f00",
+                    "inverse-primary": "#00696f",
+                    "on-secondary-fixed": "#3a0033",
+                    "primary-container": "#00f2ff",
+                    "secondary-fixed-dim": "#fface8",
+                    "surface-container": "#201f1f",
+                    "on-tertiary-fixed-variant": "#374e00",
+                    "on-surface-variant": "#b9cacb",
+                    "secondary": "#fface8",
+                    "on-error-container": "#ffdad6",
+                    "on-primary-container": "#006a71",
+                    "on-error": "#690005",
+                    "surface": "#131313",
+                    "outline": "#849495",
+                    "secondary-fixed": "#ffd7f0",
+                    "inverse-surface": "#e5e2e1",
+                    "on-tertiary-container": "#4c6900",
+                    "tertiary-fixed": "#b6f700",
+                    "on-tertiary": "#253600"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "safe-area": "5vw",
+                    "unit": "4px",
+                    "gutter": "1rem",
+                    "panel-padding": "1.5rem",
+                    "hud-margin": "2rem"
+            },
+            "fontFamily": {
+                    "body-rtf": [
+                            "Geist"
+                    ],
+                    "label-caps": [
+                            "Geist"
+                    ],
+                    "display-lg-mobile": [
+                            "Sora"
+                    ],
+                    "display-lg": [
+                            "Sora"
+                    ],
+                    "headline-md": [
+                            "Sora"
+                    ],
+                    "hud-metric": [
+                            "Geist"
+                    ]
+            },
+            "fontSize": {
+                    "body-rtf": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "1",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "display-lg-mobile": [
+                            "36px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "display-lg": [
+                            "64px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "headline-md": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "hud-metric": [
+                            "24px",
+                            {
+                                    "lineHeight": "1",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "900"
+                            }
+                    ]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .neon-grid {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(0, 219, 231, 0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 219, 231, 0.1) 1px, transparent 1px);
+            transform: perspective(500px) rotateX(60deg) scale(2);
+            transform-origin: top;
+            animation: moveGrid 5s linear infinite;
+        }
+
+        @keyframes moveGrid {
+            from { background-position: 0 0; }
+            to { background-position: 0 40px; }
+        }
+
+        .pulse-trail {
+            box-shadow: 0 0 20px 5px rgba(0, 219, 231, 0.8), inset 0 0 10px rgba(0, 219, 231, 0.8);
+            animation: pulseGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 10px 2px rgba(0, 219, 231, 0.5), inset 0 0 5px rgba(0, 219, 231, 0.5); }
+            100% { box-shadow: 0 0 30px 10px rgba(0, 219, 231, 0.9), inset 0 0 15px rgba(0, 219, 231, 0.9); }
+        }
+
+        .particles {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .particle {
+            position: absolute;
+            background: #e1fdff;
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: float 10s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            50% { opacity: 0.8; }
+            100% { transform: translateY(-100vh) scale(1); opacity: 0; }
+        }
+
+        .glass-panel {
+            background: rgba(14, 14, 14, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 219, 231, 0.2);
+        }
+
+        .btn-neon {
+            border: 2px solid #00dbe7;
+            background: transparent;
+            box-shadow: 0 0 10px rgba(0, 219, 231, 0.3), inset 0 0 10px rgba(0, 219, 231, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .btn-neon:hover {
+            background: #00dbe7;
+            color: #050505;
+            box-shadow: 0 0 20px rgba(0, 219, 231, 0.8), inset 0 0 15px rgba(0, 219, 231, 0.5);
+            transform: scale(1.05);
+        }
+        
+        .hud-text {
+            text-shadow: 0 0 5px rgba(225, 253, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface h-screen w-screen overflow-hidden flex flex-col relative selection:bg-primary/30 selection:text-primary">
+<!-- TopAppBar Shell (Hidden nav on focused gameplay canvas) -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-hud-margin py-unit bg-transparent flat no shadows scale-95 transition-transform duration-150">
+<div class="font-display-lg text-display-lg font-black text-primary drop-shadow-[0_0_10px_rgba(0,219,231,0.8)]">
+            PULSEGATE_LITE
+        </div>
+<div class="flex gap-4">
+<button aria-label="settings" class="text-primary hover:text-primary hover:drop-shadow-[0_0_8px_rgba(0,219,231,0.6)] transition-colors p-2" data-icon="settings">
+<span class="material-symbols-outlined font-hud-metric text-hud-metric">settings</span>
+</button>
+<button aria-label="pause" class="text-primary hover:text-primary hover:drop-shadow-[0_0_8px_rgba(0,219,231,0.6)] transition-colors p-2" data-icon="pause">
+<span class="material-symbols-outlined font-hud-metric text-hud-metric" style="font-variation-settings: 'FILL' 1;">pause</span>
+</button>
+</div>
+</header>
+<!-- SideNavBar (Hidden on top-level destination as per rules, assuming Gameplay is top-level but isolated) -->
+<nav class="fixed left-0 top-0 h-full z-40 flex flex-col hidden md:flex w-64 border-r border-primary/20 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[10px_0_30px_rgba(0,0,0,0.5)]">
+<div class="p-panel-padding border-b border-primary/20">
+<div class="font-display-lg text-display-lg text-primary">PULSE_OS</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant mt-2 opacity-50">SYS_VER 1.0.2</div>
+</div>
+<div class="flex flex-col flex-grow py-4 gap-2">
+<a class="text-primary border-l-4 border-primary bg-primary/10 px-4 py-3 font-hud-metric text-hud-metric flex items-center gap-3 active:scale-98 duration-100" href="#">
+<span class="material-symbols-outlined">play_arrow</span>
+                  START
+              </a>
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-3 hover:bg-primary/5 transition-colors font-hud-metric text-hud-metric flex items-center gap-3 active:scale-98 duration-100" href="#">
+<span class="material-symbols-outlined">refresh</span>
+                  RESTART
+              </a>
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-3 hover:bg-primary/5 transition-colors font-hud-metric text-hud-metric flex items-center gap-3 active:scale-98 duration-100" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+                  LEADERBOARD
+              </a>
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-3 hover:bg-primary/5 transition-colors font-hud-metric text-hud-metric flex items-center gap-3 active:scale-98 duration-100" href="#">
+<span class="material-symbols-outlined">settings</span>
+                  SETTINGS
+              </a>
+</div>
+<div class="p-panel-padding border-t border-primary/20 mt-auto">
+<button class="w-full btn-neon font-label-caps text-label-caps py-3 uppercase tracking-widest text-primary">UPGRADE_CORE</button>
+</div>
+</nav>
+<!-- Gameplay Canvas -->
+<main class="flex-grow relative z-10 overflow-hidden md:ml-64 flex items-center justify-center">
+<!-- Background Grid & Particles -->
+<div class="absolute inset-0 z-0 bg-[#050505] overflow-hidden">
+<div class="absolute bottom-0 w-full h-[819px] neon-grid"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-transparent z-10"></div>
+<div class="particles" id="particle-container"></div>
+</div>
+<!-- Central Pulse Trail -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-4 h-32 rounded-full bg-primary pulse-trail opacity-80"></div>
+<!-- Gameplay HUD Elements -->
+<div class="absolute top-safe-area left-safe-area z-30 flex flex-col gap-4">
+<div class="glass-panel p-3 rounded-lg min-w-[200px]">
+<div class="font-label-caps text-label-caps text-primary/70 mb-1">LEVEL</div>
+<div class="font-hud-metric text-hud-metric text-primary hud-text">04</div>
+</div>
+<div class="glass-panel p-3 rounded-lg min-w-[200px]">
+<div class="font-label-caps text-label-caps text-primary/70 mb-2">ENERGY</div>
+<div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full w-3/4 bg-primary shadow-[0_0_10px_#00dbe7]"></div>
+</div>
+</div>
+</div>
+<div class="absolute top-safe-area right-safe-area z-30 flex flex-col gap-4 items-end">
+<div class="glass-panel p-3 rounded-lg min-w-[200px] text-right">
+<div class="font-label-caps text-label-caps text-tertiary-fixed-dim/70 mb-1">SCORE</div>
+<div class="font-hud-metric text-hud-metric text-tertiary-fixed-dim hud-text">014_892</div>
+</div>
+<div class="glass-panel p-3 rounded-lg min-w-[200px] text-right opacity-70">
+<div class="font-label-caps text-label-caps text-tertiary-fixed-dim/50 mb-1">HIGH SCORE</div>
+<div class="font-hud-metric text-hud-metric text-tertiary-fixed-dim hud-text">099_999</div>
+</div>
+</div>
+<!-- Initial Start Screen Overlay (Centered) -->
+<div class="absolute z-40 flex flex-col items-center justify-center pointer-events-none">
+<button class="btn-neon font-hud-metric text-hud-metric text-primary px-12 py-4 uppercase tracking-widest pointer-events-auto backdrop-blur-md bg-surface-container-lowest/40">
+                START GAME
+            </button>
+<div class="font-label-caps text-label-caps text-primary/50 mt-4 tracking-[0.2em] pointer-events-auto">PRESS ANY KEY TO IGNITE</div>
+</div>
+<!-- Pause Overlay (Hidden by default, shown for demonstration structure) -->
+<!-- <div class="absolute inset-0 z-50 glass-panel flex items-center justify-center hidden">
+             <div class="text-center">
+                 <div class="font-display-lg text-display-lg text-primary mb-8 animate-pulse drop-shadow-[0_0_15px_rgba(0,219,231,0.8)]">SYSTEM_PAUSED</div>
+                 <div class="flex gap-6 justify-center">
+                     <button class="btn-neon font-hud-metric text-hud-metric text-primary px-8 py-3">RESUME</button>
+                     <button class="border border-outline-variant text-on-surface-variant hover:text-on-surface px-8 py-3 font-hud-metric text-hud-metric transition-colors backdrop-blur-md">ABORT</button>
+                 </div>
+             </div>
+        </div> -->
+</main>
+<!-- Footer Shell -->
+<footer class="fixed bottom-0 w-full flex justify-between px-hud-margin py-unit opacity-50 hover:opacity-100 transition-opacity bg-transparent flat z-50 md:ml-64 md:w-[calc(100%-16rem)]">
+<div class="font-label-caps text-label-caps text-on-surface-variant">© 2024 NEON_ARCADE_SYSTEMS</div>
+<div class="flex gap-4 font-label-caps text-label-caps">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">PRIVACY_PROT</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">DATA_ENCRYPT</a>
+</div>
+</footer>
+<script>
+        // Simple particle generator
+        const container = document.getElementById('particle-container');
+        const particleCount = 50;
+
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            
+            // Randomize properties
+            const size = Math.random() * 4 + 1;
+            const left = Math.random() * 100;
+            const duration = Math.random() * 10 + 5;
+            const delay = Math.random() * 10;
+            
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.left = `${left}%`;
+            particle.style.animationDuration = `${duration}s`;
+            particle.style.animationDelay = `-${delay}s`;
+            
+            container.appendChild(particle);
+        }
+    </script>
+</body></html>
